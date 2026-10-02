@@ -1,79 +1,57 @@
-# Organizador de Arquivos
+# 📂 SortFlow — Automated File Sorter & Storage Optimization Studio
 
-![img](https://via.placeholder.com/600x200.png?text=Organizador+de+Arquivos)
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Live%20Demo-blue?logo=vercel)](https://sortflow-toadbigode.vercel.app)
+[![React 18](https://img.shields.io/badge/React-18-blue?logo=react)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-38bdf8?logo=tailwind-css)](https://tailwindcss.com/)
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python)](https://python.org/)
 
-## Introdução
-Este projeto tem como objetivo desenvolver um organizador de arquivos simples que permite classificar e mover arquivos para pastas específicas com base em suas extensões. O projeto pode ser expandido para incluir mais recursos, como a limpeza de arquivos antigos e a integração com serviços de armazenamento em nuvem.
+> **SortFlow** is an automated directory cleanup and file organization workbench. It features a drag-and-drop web sorter with real-time target folder simulation, 1-click organized `.zip` bundle export, customizable rule matrices, and a standalone multi-platform Python CLI script.
 
-## Funcionalidades
-- Organizar arquivos em pastas baseadas em suas extensões.
-- Mover arquivos de um diretório de origem para um diretório de destino.
-- Suporte para múltiplas extensões de arquivos.
+---
 
-## Materiais utilizados
-- Linguagem de programação: Python
-- Biblioteca: os, shutil
+## ✨ Features
 
-## Tecnologias utilizadas
-- Python 3.x
-- Ambiente virtual (opcional)
+- **⚡ In-Browser Drag & Drop Sorter**: Drag raw downloads or clutter directly into the browser to preview sorted destinations.
+- **📦 1-Click Organized ZIP Generator**: Package categorized folders into a structured `.zip` archive on the fly.
+- **🛠️ Rules Engine**: Define custom folder mapping rules by file extension (`.pdf`, `.png`, `.zip`, `.py`, etc.).
+- **🐍 Python CLI Automation Script**: Standalone `organizador.py` script for local directory automation with `--dry-run` simulation mode.
+- **🔒 Zero Server Uploads**: 100% private client-side file inspection.
 
-## Fluxo do projeto
+---
 
-1. Definir os diretórios de origem e destino.
-2. Listar todos os arquivos no diretório de origem.
-3. Para cada arquivo, verificar sua extensão.
-4. Mover o arquivo para a pasta correspondente no diretório de destino.
+## 🚀 Live Demo
 
-## Como utilizar o projeto
+Experience SortFlow directly in your browser:
+👉 **[https://sortflow-toadbigode.vercel.app](https://sortflow-toadbigode.vercel.app)**
 
-1. Clonar o repositório:
-   ```bash
-   git clone https://github.com/seuusuario/organizador-arquivos.git
-Navegar até o diretório do projeto:
+---
 
-bash
-cd organizador-arquivos
-Instalar as dependências, se houver:
+## 💻 Local Development
 
-bash
-pip install -r requirements.txt
-Executar o script:
+### Web App (React + Vite)
+```bash
+# Clone repository
+git clone https://github.com/davinascimento2/organizador-de-arquivos.git
 
-bash
-python organizador.py
+# Navigate into directory
+cd organizador-de-arquivos
 
-Código do projeto
+# Install dependencies
+npm install
 
-python
-import os
-import shutil
+# Run Vite dev server
+npm run dev
+```
 
-def organizar_arquivos(diretorio_origem, diretorio_destino):
-    extensoes = {
-        'imagens': ['.jpg', '.jpeg', '.png', '.gif'],
-        'documentos': ['.pdf', '.docx', '.txt'],
-        'musicas': ['.mp3', '.wav'],
-        'videos': ['.mp4', '.mov'],
-        # Adicione mais categorias conforme necessário
-    }
+### Python CLI
+```bash
+python organizador.py /path/to/cluttered/folder --dry-run
+```
 
-    for arquivo in os.listdir(diretorio_origem):
-        nome, extensao = os.path.splitext(arquivo)
-        for pasta, exts in extensoes.items():
-            if extensao.lower() in exts:
-                destino = os.path.join(diretorio_destino, pasta)
-                os.makedirs(destino, exist_ok=True)
-                shutil.move(os.path.join(diretorio_origem, arquivo), os.path.join(destino, arquivo))
-                print(f'Movido: {arquivo} para {destino}')
-                break
+---
 
-if __name__ == "__main__":
-    origem = input("Digite o diretório de origem: ")
-    destino = input("Digite o diretório de destino: ")
-    organizar_arquivos(origem, destino)
-Conclusão
-Esse projeto fornece uma base simples para organizar arquivos automaticamente. O usuário pode expandir a funcionalidade, como adicionar uma interface gráfica ou implementar uma função de pesquisa de arquivos.
+## 👤 Author
 
-
-
+Developed by **[Davi Nascimento](https://github.com/davinascimento2)**
+Portfolio: [career-command-center-toadbigode.vercel.app](https://career-command-center-toadbigode.vercel.app)
